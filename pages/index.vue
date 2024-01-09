@@ -1,26 +1,27 @@
 <script setup lang="ts">
 /** ./content/index.yml */
-const { data: page } = await useAsyncData("index", () =>
-  queryContent("/").findOne()
-);
+// const { data: page } = await useAsyncData("index", () =>
+//   queryContent("/").findOne()
+// );
 
-useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description,
-});
+// useSeoMeta({
+//   title: page.value.title,
+//   ogTitle: page.value.title,
+//   description: page.value.description,
+//   ogDescription: page.value.description,
+// });
 
-defineOgImage({
-  component: "Docs",
-  title: page.value.title,
-  description: page.value.description,
-});
+// defineOgImage({
+//   component: "Docs",
+//   title: page.value.title,
+//   description: page.value.description,
+// });
 </script>
 
 <template>
   <div>
-    <ULandingHero v-if="page.hero" v-bind="page.hero">
+    hello,world
+    <!-- <ULandingHero v-if="page.hero" v-bind="page.hero">
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -56,9 +57,9 @@ defineOgImage({
         tag="pre"
         class="prose prose-primary dark:prose-invert mx-auto"
       />
-    </ULandingHero>
+    </ULandingHero> -->
 
-    <ULandingSection :title="page.features.title" :links="page.features.links">
+    <!-- <ULandingSection :title="page.features.title" :links="page.features.links">
       <UPageGrid>
         <ULandingCard
           v-for="(item, index) of page.features.items"
@@ -66,6 +67,6 @@ defineOgImage({
           v-bind="item"
         />
       </UPageGrid>
-    </ULandingSection>
+    </ULandingSection> -->
   </div>
 </template>

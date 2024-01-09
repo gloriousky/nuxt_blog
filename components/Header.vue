@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { NavItem } from "@nuxt/content/dist/runtime/types";
+// import type { NavItem } from "@nuxt/content/dist/runtime/types";
 
-const navigation = inject<NavItem[]>("navigation", []);
+// const navigation = inject<NavItem[]>("navigation", []);
 
-const { header } = useAppConfig();
+// const { header } = useAppConfig();
 </script>
 
 <template>
-  <UHeader>
+  <!-- <UHeader>
     <template #logo>
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
@@ -18,7 +18,6 @@ const { header } = useAppConfig();
     </template>
 
     <template v-if="header?.search" #center>
-      <!-- <UDocsSearchButton class="hidden lg:flex" /> -->
       <UHeaderLinks :links="header.tabs" />
     </template>
 
@@ -39,5 +38,5 @@ const { header } = useAppConfig();
     <template #panel>
       <UNavigationTree :links="mapContentNavigation(navigation)" />
     </template>
-  </UHeader>
+  </UHeader> -->
 </template>
