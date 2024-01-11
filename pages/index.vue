@@ -1,26 +1,7 @@
-<script setup lang="ts">
-/** ./content/index.yml */
-// const { data: page } = await useAsyncData("index", () =>
-//   queryContent("/").findOne()
-// );
-
-// useSeoMeta({
-//   title: page.value.title,
-//   ogTitle: page.value.title,
-//   description: page.value.description,
-//   ogDescription: page.value.description,
-// });
-
-// defineOgImage({
-//   component: "Docs",
-//   title: page.value.title,
-//   description: page.value.description,
-// });
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    hello,world
     <!-- <ULandingHero v-if="page.hero" v-bind="page.hero">
       <template #headline>
         <UBadge

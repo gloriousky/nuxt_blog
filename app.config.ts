@@ -15,7 +15,7 @@ export default defineAppConfig({
     },
   },
   seo: {
-    siteName: "Nuxt UI - David'",
+    siteName: "Gloriousky Dev",
   },
   header: {
     logo: {
@@ -30,54 +30,20 @@ export default defineAppConfig({
         icon: "i-simple-icons-github",
         to: "https://github.com/gloriousky",
         target: "_blank",
-        "aria-label": "Docs template on GitHub",
+        "aria-label": "GitHub",
       },
       {
         icon: "i-simple-icons-linkedin",
         to: "https://www.linkedin.com/in/zhe-xi-lin-b75358200/",
         target: "_blank",
-        "aria-label": "Docs template on Linkedin",
+        "aria-label": "Linkedin",
       },
     ],
     tabs: [
       {
         label: "Blog",
         icon: "i-heroicons-square-3-stack-3d",
-        to: "/blog",
-        children: [
-          {
-            label: "Features",
-            to: "/blog#features",
-            exactHash: true,
-            icon: "i-heroicons-beaker",
-            description: "Discover all the features of Nuxt UI Pro.",
-          },
-          {
-            label: "Pricing",
-            to: "/blog#pricing",
-            exactHash: true,
-            icon: "i-heroicons-credit-card",
-            description: "A simple pricing, for solo developers or teams.",
-          },
-          {
-            label: "Guide",
-            to: "/blog/guide",
-            icon: "i-heroicons-book-open",
-            description: "Learn how to use Nuxt UI Pro in your app.",
-          },
-          {
-            label: "Components",
-            to: "/blog/components",
-            icon: "i-heroicons-cube-transparent",
-            description:
-              "Discover all the components available in Nuxt UI Pro.",
-          },
-        ],
-      },
-      {
-        label: "Documentation",
-        icon: "i-heroicons-book-open",
-        to: "/getting-started",
+        to: "/",
       },
       {
         label: "Projects",
@@ -85,55 +51,28 @@ export default defineAppConfig({
         to: "/",
       },
       {
-        label: "About me",
+        label: "About",
         icon: "i-heroicons-academic-cap",
-        to: "/about",
+        to: "/",
       },
     ],
   },
   footer: {
-    credits: "Copyright © 2023",
+    credits: "Copyright © 2024",
     colorMode: false,
     links: [
       {
         icon: "i-simple-icons-github",
         to: "https://github.com/gloriousky",
         target: "_blank",
-        "aria-label": "Docs template on GitHub",
+        "aria-label": "GitHub",
       },
       {
         icon: "i-simple-icons-linkedin",
         to: "https://www.linkedin.com/in/zhe-xi-lin-b75358200/",
         target: "_blank",
-        "aria-label": "Docs template on Linkedin",
+        "aria-label": "Linkedin",
       },
     ],
-  },
-  toc: {
-    title: "Table of Contents",
-    bottom: {
-      title: "Community",
-      edit: "https://github.com/nuxt-ui-pro/docs/edit/main/content",
-      links: [
-        {
-          icon: "i-heroicons-star",
-          label: "Star on GitHub",
-          to: "https://github.com/nuxt/ui",
-          target: "_blank",
-        },
-        {
-          icon: "i-heroicons-book-open",
-          label: "Nuxt UI Pro docs",
-          to: "https://ui.nuxt.com/pro/guide",
-          target: "_blank",
-        },
-        {
-          icon: "i-simple-icons-nuxtdotjs",
-          label: "Purchase a license",
-          to: "https://ui.nuxt.com/pro/purchase",
-          target: "_blank",
-        },
-      ],
-    },
   },
 });
