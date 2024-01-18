@@ -2,7 +2,7 @@
 const { seo } = useAppConfig();
 
 const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation()
+  fetchContentNavigation(),
 );
 
 useHead({
@@ -21,7 +21,7 @@ provide("navigation", navigation);
 </script>
 
 <template>
-  <div class="p-4 bg-gray-800">
+  <div class="p-4 bg-gray-800 h-dvh">
     <Header />
 
     <NuxtLayout>
