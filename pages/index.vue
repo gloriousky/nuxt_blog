@@ -1,46 +1,57 @@
-<script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
-
-useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
-})
-
-defineOgImage({
-  component: 'Docs',
-  title: page.value.title,
-  description: page.value.description
-})
+<script setup>
+const links = [
+  {
+    label: "All Articles",
+    icon: "i-heroicons-home",
+    to: "/",
+    badge: 66,
+  },
+  {
+    label: "Frontend",
+    icon: "i-heroicons-chart-bar",
+    to: "/",
+    badge: 77,
+  },
+  {
+    label: "Javascript",
+    icon: "i-heroicons-command-line",
+    to: "/",
+    badge: 88,
+  },
+  {
+    label: "Travel",
+    icon: "i-heroicons-command-line",
+    to: "/",
+    badge: 99,
+  },
+];
 </script>
 
 <template>
-  <div>
-    <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <template #headline>
-        <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full font-semibold">
-          <NuxtLink :to="page.hero.headline.to" target="_blank" class="focus:outline-none" tabindex="-1">
-            <span class="absolute inset-0" aria-hidden="true" />
-          </NuxtLink>
-
-          {{ page.hero.headline.label }}
-
-          <UIcon v-if="page.hero.headline.icon" :name="page.hero.headline.icon" class="ml-1 w-4 h-4 pointer-events-none" />
-        </UBadge>
-      </template>
-
-      <template #title>
-        <MDC :value="page.hero.title" />
-      </template>
-
-      <MDC :value="page.hero.code" tag="pre" class="prose prose-primary dark:prose-invert mx-auto" />
-    </ULandingHero>
-
-    <ULandingSection :title="page.features.title" :links="page.features.links">
-      <UPageGrid>
-        <ULandingCard v-for="(item, index) of page.features.items" :key="index" v-bind="item" />
-      </UPageGrid>
-    </ULandingSection>
-  </div>
+  <UContainer class="h-dvh my-4">
+    <div class="flex">
+      <UVerticalNavigation class="py-8" :links="links" />
+      <div class="w-full mx-6">
+        <h2 class="text-center text-2xl mb-2">
+          推薦文章
+        </h2>
+        <ul class="flex flex-wrap">
+          <li v-for="i in 6" :key="i" class="w-1/2">
+            <UCard
+              class="h-[15rem] mx-2 my-2"
+              :ui="{
+                background: 'bg-red-500 dark:bg-gray-900',
+              }"
+            >
+              <template #header>
+                文章標題
+              </template>
+              文章內容
+              <Placeholder class="h-32" />
+            </UCard>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </UContainer>
 </template>

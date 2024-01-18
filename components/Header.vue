@@ -1,42 +1,30 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content/dist/runtime/types'
-
-const navigation = inject<NavItem[]>('navigation', [])
-
-const { header } = useAppConfig()
+const { header } = useAppConfig();
 </script>
 
 <template>
-  <UHeader>
-    <template #logo>
-      <template v-if="header?.logo?.dark || header?.logo?.light">
-        <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
-      </template>
-      <template v-else>
-        Nuxt UI Pro <UBadge label="Docs" variant="subtle" class="mb-0.5" />
-      </template>
-    </template>
-
-    <template v-if="header?.search" #center>
-      <UDocsSearchButton class="hidden lg:flex" />
-    </template>
-
-    <template #right>
-      <UDocsSearchButton v-if="header?.search" :label="null" class="lg:hidden" />
-
-      <UColorModeButton v-if="header?.colorMode" />
-
-      <template v-if="header?.links">
-        <UButton
-          v-for="(link, index) of header.links"
-          :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
-        />
-      </template>
-    </template>
-
-    <template #panel>
-      <UNavigationTree :links="mapContentNavigation(navigation)" />
-    </template>
-  </UHeader>
+  <div
+    class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-3 h-[--header-height]"
+  >
+    <NuxtLink class="lg:flex-1 flex items-center gap-1.5" to="/">
+      <h1 class="hover:text-primary text-2xl font-semibold">David's blog</h1>
+    </NuxtLink>
+    <ul class="items-center gap-x-8 hidden lg:flex">
+      <li v-for="(item, idx) of header?.tabs" :key="idx" class="relative">
+        <NuxtLink
+          class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary"
+          :to="item.to"
+        >
+          {{ item.label }}
+        </NuxtLink>
+      </li>
+    </ul>
+    <div class="flex items-center justify-end lg:flex-1 gap-2">
+      <UButton
+        v-for="(link, index) of header?.links"
+        :key="index"
+        v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+      />
+    </div>
+  </div>
 </template>

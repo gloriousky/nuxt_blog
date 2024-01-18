@@ -1,50 +1,39 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+const { seo } = useAppConfig();
 
-const { seo } = useAppConfig()
-
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
-  default: () => [],
-  server: false
-})
+const { data: navigation } = await useAsyncData("navigation", () =>
+  fetchContentNavigation(),
+);
 
 useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
+  meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
+  link: [{ rel: "icon", href: "/favicon.ico" }],
   htmlAttrs: {
-    lang: 'en'
-  }
-})
+    lang: "en",
+  },
+});
 
 useSeoMeta({
   ogSiteName: seo?.siteName,
-  twitterCard: 'summary_large_image'
-})
+});
 
-provide('navigation', navigation)
+provide("navigation", navigation);
 </script>
 
 <template>
-  <div>
+  <div class="p-4 bg-gray-800 h-dvh">
     <Header />
 
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
 
     <Footer />
 
-    <ClientOnly>
+    <!-- <ClientOnly>
       <LazyUDocsSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
+    </ClientOnly> -->
 
-    <UNotifications />
+    <!-- <UNotifications /> -->
   </div>
 </template>
