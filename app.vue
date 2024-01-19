@@ -21,7 +21,7 @@ provide("navigation", navigation);
 </script>
 
 <template>
-  <div class="p-4 bg-gray-800 h-dvh">
+  <div class="p-4 h-dvh">
     <Header />
 
     <NuxtLayout>

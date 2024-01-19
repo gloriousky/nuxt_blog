@@ -40,14 +40,13 @@ const links = [
             <UCard
               class="h-[15rem] mx-2 my-2"
               :ui="{
-                background: 'bg-red-500 dark:bg-gray-900',
+                background: 'bg-gray-200 dark:bg-gray-900',
               }"
             >
               <template #header>
                 文章標題
               </template>
               文章內容
-              <Placeholder class="h-32" />
             </UCard>
           </li>
         </ul>
