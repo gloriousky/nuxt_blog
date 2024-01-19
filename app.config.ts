@@ -1,4 +1,7 @@
 export default defineAppConfig({
+  theme: {
+    darkMode: false,
+  },
   ui: {
     primary: "purple" /** Primary color of your UI */,
     gray: "slate",
