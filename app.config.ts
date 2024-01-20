@@ -3,7 +3,7 @@ export default defineAppConfig({
     darkMode: false,
   },
   ui: {
-    primary: "purple" /** Primary color of your UI */,
+    primary: "sky" /** Primary color of your UI */,
     gray: "slate",
     footer: {
       bottom: {
