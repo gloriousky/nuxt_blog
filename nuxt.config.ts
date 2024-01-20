@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@nuxtjs/fontaine",
     "@nuxtjs/google-fonts",
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore"],
+      },
+    ],
     "nuxt-og-image",
   ],
   colorMode: {
@@ -15,7 +21,7 @@ export default defineNuxtConfig({
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     "components:extend": (components) => {
       const globals = components.filter((c) =>
-        ["UButton"].includes(c.pascalName)
+        ["UButton"].includes(c.pascalName),
       );
 
       globals.forEach((c) => (c.global = true));
