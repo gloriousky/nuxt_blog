@@ -1,56 +1,52 @@
-<script setup>
-const links = [
-  {
-    label: "All Articles",
-    icon: "i-heroicons-home",
-    to: "/",
-    badge: 66,
-  },
-  {
-    label: "Frontend",
-    icon: "i-heroicons-chart-bar",
-    to: "/",
-    badge: 77,
-  },
-  {
-    label: "Javascript",
-    icon: "i-heroicons-command-line",
-    to: "/",
-    badge: 88,
-  },
-  {
-    label: "Travel",
-    icon: "i-heroicons-command-line",
-    to: "/",
-    badge: 99,
-  },
-];
-</script>
-
 <template>
-  <UContainer class="h-dvh my-4">
-    <div class="flex">
-      <UVerticalNavigation class="py-8" :links="links" />
-      <div class="w-full mx-6">
-        <h2 class="text-center text-2xl mb-2">
-          推薦文章
-        </h2>
-        <ul class="flex flex-wrap">
-          <li v-for="i in 6" :key="i" class="w-1/2">
-            <UCard
-              class="h-[15rem] mx-2 my-2"
-              :ui="{
-                background: 'bg-gray-200 dark:bg-gray-900',
-              }"
+  <div class="w-full lg:mx-6 text-gray-600 dark:text-white">
+    <h2 class="text-center text-2xl mb-2">
+      {{ articles.title }}
+    </h2>
+    <ul class="flex flex-wrap">
+      <li v-for="item in articles.data" :key="item" class="w-full md:w-1/2">
+        <NuxtLink :to="item.url">
+          <UCard class="h-[15rem] mx-2 my-2">
+            <template #header>
+              <div class="flex justify-between">
+                <div />
+                <h3 class="truncate text-center">
+                  {{ item.title }}
+                </h3>
+                <div>
+                  <UBadge
+                    :color="item.category_color"
+                    :label="item.category"
+                    variant="soft"
+                  />
+                </div>
+              </div>
+            </template>
+            <img
+              class="w-full h-[10rem] hover:scale-105 hover:transition-all"
+              :src="item.img"
+              alt=""
             >
-              <template #header>
-                文章標題
-              </template>
-              文章內容
-            </UCard>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </UContainer>
+            <div class="flex justify-end items-center mt-2 text-gray-400">
+              <div class="i-heroicons-clock mr-1" />
+
+              <div class="text-xs">
+                {{ item.created_time }}
+              </div>
+            </div>
+          </UCard>
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
 </template>
+<script setup>
+definePageMeta({
+  layout: "default",
+});
+
+const { data: articles } = await useFetch("/api/articles", {
+  pick: ["title", "data"],
+});
+console.log(articles);
+</script>

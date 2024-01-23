@@ -3,7 +3,7 @@ export default defineAppConfig({
     darkMode: false,
   },
   ui: {
-    primary: "purple" /** Primary color of your UI */,
+    primary: "sky" /** Primary color of your UI */,
     gray: "slate",
     footer: {
       bottom: {
@@ -18,7 +18,7 @@ export default defineAppConfig({
     },
     card: {
       base: "",
-      background: "bg-white dark:bg-gray-900",
+      background: "bg-white dark:bg-gray-700",
       divide: "divide-y divide-gray-200 dark:divide-gray-800",
       ring: "ring-1 ring-gray-200 dark:ring-gray-800",
       rounded: "rounded-lg",
