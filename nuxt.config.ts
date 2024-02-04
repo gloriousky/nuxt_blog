@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       },
     ],
     "nuxt-og-image",
+    "@formkit/auto-animate/nuxt",
   ],
   colorMode: {
     preference: "system",

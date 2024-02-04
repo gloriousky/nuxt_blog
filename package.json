@@ -19,6 +19,7 @@
     "*.{js,vue}": "eslint --fix"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@iconify-json/heroicons": "^1.1.19",
     "@iconify-json/simple-icons": "^1.1.85",
     "@nuxt/content": "^2.10.0",
