@@ -7,7 +7,7 @@ export default defineEventHandler(() => {
       {
         title: "CSR、SSR、SSG三種網頁渲染方式",
         category: "Web",
-        category_color: "primary",
+        category_color: "blue",
         url: "/frontend/1",
         img: "https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/screely-1586183781361.png",
         created_time: "2023-11-07",
@@ -40,7 +40,7 @@ export default defineEventHandler(() => {
       {
         title: "什麼是event loop?",
         category: "Web",
-        category_color: "primary",
+        category_color: "blue",
         url: "/frontend/3",
         img: "https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/screely-1586183781361.png",
         created_time: "2024-01-09",

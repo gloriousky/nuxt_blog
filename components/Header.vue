@@ -177,7 +177,7 @@ const switchDarkMode = () => {
     <ul class="items-center gap-x-8 hidden lg:flex">
       <li v-for="(item, idx) of header?.tabs" :key="idx" class="relative">
         <NuxtLink
-          class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary"
+          class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary duration-200"
           :to="item.to"
         >
           {{ item.label }}
